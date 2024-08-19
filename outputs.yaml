@@ -1,0 +1,35 @@
+version: 3
+outputs:
+    audit-to-opensearch:
+        addresses: https://YOUR_IP_ADDRESS:9200
+        index: audit
+        module: opensearch
+        name: audit-to-opensearch
+        username: YOUR_USERNAME
+        password: YOUR_PASSWORD
+        type: audit
+    detections-to-opensearch:
+        addresses: https://YOUR_IP_ADDRESS:9200
+        index: detections
+        module: opensearch
+        name: detections-to-opensearch
+        username: YOUR_USERNAME
+        password: YOUR_PASSWORD
+        type: detect
+    enrollments-to-opensearch:
+        addresses: https://YOUR_IP_ADDRESS:9200
+        index: enrollments
+        module: opensearch
+        name: enrollments-to-opensearch
+        username: YOUR_USERNAME
+        password: YOUR_PASSWORD
+        type: deployment
+    events-to-opensearch:
+        addresses: https//YOUR_IP_ADDRESS:9200
+        index: events
+        module: opensearch
+        name: events-to-opensearch
+        username: YOUR_USERNAME
+        password: YOUR_PASSWORD
+        tag: windows
+        type: event
