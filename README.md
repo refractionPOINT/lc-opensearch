@@ -12,6 +12,9 @@ You can either deploy OpenSearch with the provided `docker-compose.yaml` if you 
 * Adjust protocols (http or https), IPs (or URLs), ports, usernames, and passwords in `outputs.yaml` before applying to your LimaCharlie org
 * Add `opensearch-node2` back to the `docker-compose.yml` if you want to deploy multiple OpenSearch nodes
 
+> [!CAUTION]
+> This is not intended to be used as a production deployment. If you are deploying OpenSearch in production, ensure that you are taking proper security precautions and using best practices, such as SSL certificates, usernames and passwords, tenancy and permissions considerations, etc. More details regarding the secure deployment of OpenSearch can be found [here](https://opensearch.org/docs/latest/security/configuration/index/).
+
 ## Deploy OpenSearch 
 
 Wait for all containers to be ready after running the following before performing the imports below. OpenSearch Dashboards will be available on http://localhost:5601.
