@@ -15,6 +15,9 @@ You can either deploy OpenSearch with the provided `docker-compose.yaml` if you 
 > [!CAUTION]
 > This is not intended to be used as a production deployment. If you are deploying OpenSearch in production, ensure that you are taking proper security precautions and using best practices, such as SSL certificates, usernames and passwords, tenancy and permissions considerations, etc. More details regarding the secure deployment of OpenSearch can be found [here](https://opensearch.org/docs/latest/security/configuration/index/).
 
+> [!IMPORTANT]
+> Passwords must be at least 8 characters, contain at least one uppercase letter [A–Z], contain at least one lowercase letter [a–z], contain at least one digit [0–9], and contain at least one special character. More information [here](https://opensearch.org/docs/latest/security/configuration/demo-configuration/#setting-up-a-custom-admin-password).
+
 ## Deploy OpenSearch 
 
 Wait for all containers to be ready after running the following before performing the imports below. OpenSearch Dashboards will be available on http://localhost:5601.
@@ -41,7 +44,7 @@ docker exec opensearch-node1 bash -c "curl -k -XPUT https://localhost:9200/_inde
 
 
 ```
-docker exec opensearch-dashboards bash -c 'curl -k -X POST "http://localhost:5601/api/saved_objects/_import?overwrite=true" -u admin:'password' -H "osd-xsrf: true" --form file=@/opt/exports/export.ndjson'
+docker exec opensearch-dashboards bash -c 'curl -k -X POST "http://localhost:5601/api/saved_objects/_import?overwrite=true" -u admin:"password" -H "osd-xsrf: true" --form file=@/opt/exports/export.ndjson'
 ```
 
 ## LimaCharlie Outputs
